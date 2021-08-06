@@ -15,7 +15,7 @@ RUN apk del git
 RUN npm install
 RUN npm run build
 
-HEALTHCHECK CMD curl --fail http://localhost:${PORT} || exit 1
+# HEALTHCHECK CMD curl -v --fail http://localhost:${PORT}/.well-known/acme-challenge/:content || exit 1
 
 CMD npm run start
 EXPOSE ${PORT}
